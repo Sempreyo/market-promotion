@@ -1,0 +1,32 @@
+.promo-price-card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 14px;
+	padding: 16px 20px;
+	background-color: var(--dark);
+	border-radius: var(--radius-m);
+
+	&__label {
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #ffb197;
+	}
+
+	&__value {
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 1.2;
+		color: #fff;
+		white-space: nowrap;
+
+		span {
+			font-size: 13px;
+			font-weight: 400;
+			color: rgba(255, 255, 255, 0.72);
+		}
+	}
+}

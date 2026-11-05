@@ -1,0 +1,26 @@
+/* Base */
+@import "base/var";
+@import "base/mixin";
+@import "base/fonts";
+@import "base/global";
+@import "base/animation";
+
+/* Blocks */
+@import "blocks/container";
+@import "blocks/button";
+@import "blocks/button-up";
+@import "blocks/section";
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/search-card";
+@import "blocks/promo-price-card";
+@import "blocks/promo-page";
+@import "blocks/promo-hero";
+@import "blocks/promo-value";
+@import "blocks/promo-top3";
+@import "blocks/promo-offer-month";
+@import "blocks/promo-company-card";
+@import "blocks/promo-table";
+@import "blocks/promo-price";
+@import "blocks/promo-steps";
+@import "blocks/promo-lead";

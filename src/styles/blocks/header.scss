@@ -1,0 +1,207 @@
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background-color: rgba(255, 255, 255, 0.94);
+	backdrop-filter: saturate(180%) blur(10px);
+	border-bottom: 1px solid var(--line);
+	transition: box-shadow 0.25s var(--ease);
+
+	&.is-scrolled {
+		box-shadow: 0 10px 30px -22px rgba(16, 32, 39, 0.45);
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+		height: var(--header-h);
+	}
+
+	&__logo {
+		display: inline-flex;
+		align-items: center;
+		flex: none;
+
+		img {
+			width: 172px;
+			height: auto;
+		}
+	}
+
+	&__nav {
+		margin-left: auto;
+
+		@include max(tlx) {
+			display: none;
+		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 26px;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		padding: 6px 0;
+		font-size: 11px;
+		font-weight: 600;
+		line-height: 1;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ink);
+		white-space: nowrap;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 2px;
+			background-color: var(--brand);
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 0.25s var(--ease);
+		}
+
+		@include hover-device {
+			&:hover {
+				color: var(--brand);
+
+				&::after {
+					transform: scaleX(1);
+				}
+			}
+		}
+
+		&.is-active {
+			color: var(--brand);
+
+			&::after {
+				transform: scaleX(1);
+			}
+		}
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-left: 4px;
+
+		@include max(tlx) {
+			margin-left: auto;
+		}
+
+		@include max(t) {
+			.btn {
+				display: none;
+			}
+		}
+	}
+
+	&__burger {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		width: 42px;
+		height: 42px;
+		margin-left: auto;
+		border: 1px solid var(--line);
+		border-radius: var(--radius-s);
+		color: var(--ink);
+		transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+
+		.icon {
+			width: 20px;
+			height: 20px;
+		}
+
+		@include max(tlx) {
+			display: inline-flex;
+		}
+
+		@include hover-device {
+			&:hover {
+				color: var(--brand);
+				border-color: var(--brand);
+			}
+		}
+	}
+
+	&__burger-close {
+		display: none;
+	}
+
+	&.is-open &__burger-open {
+		display: none;
+	}
+
+	&.is-open &__burger-close {
+		display: block;
+	}
+
+	&__mobile {
+		display: none;
+		border-top: 1px solid var(--line);
+		background-color: #fff;
+		padding: 12px var(--gutter) 24px;
+
+		@include max(tlx) {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			max-height: calc(100vh - var(--header-h));
+			overflow-y: auto;
+			box-shadow: 0 24px 40px -30px rgba(16, 32, 39, 0.6);
+		}
+	}
+
+	&.is-open &__mobile {
+		display: block;
+
+		@include min(tlx) {
+			display: none;
+		}
+	}
+
+	&__mobile-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__mobile-link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		padding: 15px 0;
+		border-bottom: 1px solid var(--line);
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--ink);
+
+		.icon {
+			width: 16px;
+			height: 16px;
+			color: var(--muted-soft);
+		}
+
+		@include hover-device {
+			&:hover {
+				color: var(--brand);
+			}
+		}
+	}
+
+	&__mobile-cta {
+		margin-top: 20px;
+	}
+}

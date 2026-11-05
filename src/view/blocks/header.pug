@@ -1,0 +1,49 @@
+header.header
+	.container.header__inner
+		a.header__logo(href='https://market.cnews.ru/', aria-label='CNewsMarket — на главную')
+			img(src='./images/logo-cnewsmarket.png', alt='CNewsMarket', width='250', height='46')
+
+		nav.header__nav(aria-label='Основная навигация')
+			ul.header__list
+				li
+					a.header__link(href='#top3') ТОП-3 в поиске
+				li
+					a.header__link(href='#offer') Предложение месяца
+				li
+					a.header__link(href='#company') Карточка компании
+				li
+					a.header__link(href='#pricing') Стоимость
+				li
+					a.header__link(href='#how') Как это работает
+
+		.header__actions
+			a.btn.btn--sm.header__cta(href='#lead') Оставить заявку
+
+			button.header__burger(type='button', aria-label='Открыть меню', aria-expanded='false', aria-controls='header-menu')
+				+icon('menu', 'header__burger-open')
+				+icon('close', 'header__burger-close')
+
+	#header-menu.header__mobile
+		ul.header__mobile-list
+			li
+				a.header__mobile-link(href='#top3')
+					| ТОП-3 в поиске
+					+icon('arrow-right')
+			li
+				a.header__mobile-link(href='#offer')
+					| Предложение месяца
+					+icon('arrow-right')
+			li
+				a.header__mobile-link(href='#company')
+					| Карточка компании
+					+icon('arrow-right')
+			li
+				a.header__mobile-link(href='#pricing')
+					| Стоимость
+					+icon('arrow-right')
+			li
+				a.header__mobile-link(href='#how')
+					| Как это работает
+					+icon('arrow-right')
+
+		a.btn.btn--block.header__mobile-cta(href='#lead') Оставить заявку

@@ -1,0 +1,10 @@
+.container {
+	width: 100%;
+	max-width: calc(var(--container) + var(--gutter) * 2);
+	margin: 0 auto;
+	padding: 0 var(--gutter);
+
+	@include max(ti) {
+		--gutter: 18px;
+	}
+}

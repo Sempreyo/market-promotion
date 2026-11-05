@@ -1,0 +1,12 @@
+mixin pic(name, ext, alt, className, width, height)
+	picture
+		source(srcset=`./images/${name}.webp`, type='image/webp')
+		img(
+			class=className
+			src=`./images/${name}.${ext}`
+			alt=alt
+			width=width
+			height=height
+			loading='lazy'
+			decoding='async'
+		)&attributes(attributes)

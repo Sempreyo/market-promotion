@@ -1,0 +1,449 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'Продвижение на CNewsMarket — ТОП-3 в поиске и карточка компании'
+		};
+
+block main
+	.promo-page
+
+		//- Hero
+		section.promo-hero
+			.container
+				nav.promo-hero__breadcrumbs(aria-label='Хлебные крошки')
+					a(href='https://market.cnews.ru/') CNewsMarket
+					+icon('arrow-right')
+					span Продвижение
+
+				.promo-hero__inner
+					.promo-hero__content
+						p.eyebrow(data-reveal) Продвижение для ИТ-поставщиков
+						h1.promo-hero__title(data-reveal) Продвижение на CNewsMarket
+						p.promo-hero__lead(data-reveal)
+							| Попадите в ТОП-3 поиска, усильте карточку компании и покажите продукт
+							| аудитории, которая выбирает решения для бизнеса.
+						.promo-hero__actions(data-reveal)
+							a.btn.btn--lg(href='#lead')
+								| Отправить заявку
+								+icon('arrow-right', 'icon--arrow')
+							a.btn.btn--ghost.btn--lg(href='#pricing') Тарифы и стоимость
+						ul.promo-hero__facts(data-reveal)
+							li
+								+icon('check')
+								| ТОП-3 в поиске
+							li
+								+icon('check')
+								| Карточка компании
+							li
+								+icon('check')
+								| Предложение месяца
+
+					.promo-hero__visual(data-reveal)
+						.search-card
+							.search-card__bar
+								+icon('search')
+								span.search-card__query IaaS для бизнеса
+								span.search-card__count 4 результата
+							.search-card__list
+								.search-card__row.search-card__row--own
+									span.search-card__rank.search-card__rank--own 1
+									div
+										p.search-card__name Ваша компания
+										p.search-card__meta IaaS · ЦОД Tier III · ФЗ-152
+									span.chip.chip--brand ТОП-3
+								.search-card__row
+									span.search-card__rank 2
+									div
+										p.search-card__name CloudCore
+										p.search-card__meta IaaS · Москва, Санкт-Петербург
+								.search-card__row
+									span.search-card__rank 3
+									div
+										p.search-card__name ServerPro
+										p.search-card__meta Виртуальные ЦОД · SLA 99,95%
+								.search-card__row.search-card__row--muted
+									span.search-card__rank 4
+									div
+										p.search-card__name IT Basis
+										p.search-card__meta IaaS · по запросу
+
+						.promo-price-card
+							span.promo-price-card__label Предложение месяца
+							p.promo-price-card__value
+								| 20 000 ₽
+								span= ' / мес.'
+
+		//- Value props
+		section.promo-value
+			.container
+				.promo-value__grid
+					.promo-value__item(data-reveal)
+						span.promo-value__icon
+							+icon('search')
+						div
+							p.promo-value__title ТОП-3 в поиске
+							p.promo-value__text Компания в первых трёх результатах по ключевым запросам раздела.
+					.promo-value__item(data-reveal)
+						span.promo-value__icon
+							+icon('card')
+						div
+							p.promo-value__title Карточка компании
+							p.promo-value__text Описание, логотип и ссылки в каталоге CNewsMarket.
+					.promo-value__item(data-reveal)
+						span.promo-value__icon
+							+icon('star')
+						div
+							p.promo-value__title Предложение месяца
+							p.promo-value__text Карточка продукта на главной странице раздела.
+
+		//- ТОП-3
+		section.section#top3
+			.container
+				.promo-top3__grid
+					.promo-top3__media(data-reveal)
+						.promo-top3__frame
+						+pic('promo-team', 'jpg', 'Команда работает с данными и метриками продвижения', 'promo-top3__image', 1600, 1200)
+						.promo-top3__badge
+							span.promo-top3__badge-icon
+								+icon('users')
+							div
+								p.promo-top3__badge-title ИТ-директора и закупщики
+								p.promo-top3__badge-text аудитория CNewsMarket
+
+					.promo-top3__content(data-reveal)
+						p.eyebrow 01 — ТОП-3 в поиске
+						h2.section__title Ваша компания — в первой тройке выдачи
+						p.section__lead
+							| Пользователи CNewsMarket ищут конкретные ИТ-решения. Первые три позиции
+							| в результатах поиска получают максимум внимания — и переходов в карточку компании.
+
+						.promo-top3__features
+							.promo-top3__feature
+								span.promo-top3__feature-icon
+									+icon('eye')
+								div
+									p.promo-top3__feature-title Показ по целевым запросам
+									p.promo-top3__feature-text Компания появляется, когда пользователь ищет вашу услугу.
+							.promo-top3__feature
+								span.promo-top3__feature-icon
+									+icon('target')
+								div
+									p.promo-top3__feature-title Приоритетное место
+									p.promo-top3__feature-text Первые три позиции раздела — выше остальных поставщиков.
+							.promo-top3__feature
+								span.promo-top3__feature-icon
+									+icon('chart')
+								div
+									p.promo-top3__feature-title Переход в карточку
+									p.promo-top3__feature-text Клиент сразу видит описание, контакты и предложения.
+							.promo-top3__feature
+								span.promo-top3__feature-icon
+									+icon('layers')
+								div
+									p.promo-top3__feature-title Комплексный охват
+									p.promo-top3__feature-text ТОП-3 в поиске и Предложение месяца в одном пакете.
+
+						.promo-top3__offer
+							div
+								.promo-top3__price
+									span.promo-top3__price-value 20 000 ₽
+									span.promo-top3__price-note / мес.
+								p.promo-top3__price-label Комплексное продвижение: ТОП-3 в поиске + Предложение месяца
+							.promo-top3__offer-cta
+								a.btn.btn--ghost(href='#lead')
+									| Отправить заявку
+									+icon('arrow-right', 'icon--arrow')
+
+		//- Предложение месяца
+		section.section.section--soft#offer
+			.container
+				.section__head.section__head--row(data-reveal)
+					div
+						p.eyebrow 02 — Предложение месяца
+						h2.section__title Предложения месяца
+						p.section__lead Карточки продуктов на главной странице раздела: логотип, цена и короткое описание в одном блоке.
+					p.section__aside Четыре слота в месяц, состав обновляется по согласованию с редакцией.
+
+				.promo-offer-month__grid
+					article.promo-offer-month__card(data-reveal)
+						.promo-offer-month__logo
+							img(src='./images/logos/bpm.png', alt='Первая Форма', width='770', height='226', loading='lazy')
+						.promo-offer-month__category
+							span.chip BPM
+						h3.promo-offer-month__title BPM
+						p.promo-offer-month__price от 12 000 ₽ / год
+						p.promo-offer-month__desc Цифровые процессы с комфортом для людей
+						a.promo-offer-month__link(href='#lead')
+							| Подробнее
+							+icon('arrow-right')
+
+					article.promo-offer-month__card(data-reveal)
+						.promo-offer-month__logo
+							img(src='./images/logos/megafon.png', alt='МегаФон Пробизнес', width='1304', height='229', loading='lazy')
+						.promo-offer-month__category
+							span.chip IaaS
+						h3.promo-offer-month__title IaaS
+						p.promo-offer-month__price по запросу
+						p.promo-offer-month__desc ЦОД Tier III, ФЗ-152 УЗ-1 К1 и Г1 ФЗ-187
+						a.promo-offer-month__link(href='#lead')
+							| Подробнее
+							+icon('arrow-right')
+
+					article.promo-offer-month__card(data-reveal)
+						.promo-offer-month__logo
+							img(src='./images/logos/mtt.png', alt='МТТ', width='216', height='105', loading='lazy')
+						.promo-offer-month__category
+							span.chip IaaS
+						h3.promo-offer-month__title IaaS
+						p.promo-offer-month__price от 0 ₽
+						p.promo-offer-month__desc Продуманная связь для вашего бизнеса
+						a.promo-offer-month__link(href='#lead')
+							| Подробнее
+							+icon('arrow-right')
+
+					article.promo-offer-month__card(data-reveal)
+						.promo-offer-month__logo
+							img(src='./images/logos/cloud.png', alt='Рег.Облако', width='1280', height='391', loading='lazy')
+						.promo-offer-month__category
+							span.chip Kubernetes
+						h3.promo-offer-month__title Kubernetes
+						p.promo-offer-month__price от 5,51 ₽ / час
+						p.promo-offer-month__desc Kubernetes as a Service: отказоустойчивые кластеры, быстрый запуск, удобное управление
+						a.promo-offer-month__link(href='#lead')
+							| Подробнее
+							+icon('arrow-right')
+
+				.promo-offer-month__cta
+					a.btn.btn--ghost(href='#lead')
+						| Отправить заявку
+						+icon('arrow-right', 'icon--arrow')
+
+		//- Карточка компании
+		section.section#company
+			.container
+				.section__head(data-reveal)
+					p.eyebrow 03 — Карточка компании
+					h2.section__title Карточка компании
+					p.section__lead Расширенное представительство в каталоге: описание, логотип, контакты и ссылки на материалы компании.
+
+				.promo-company-card__grid
+					article.promo-company-card__plan(data-reveal)
+						p.promo-company-card__plan-name Стандарт
+						h3.promo-company-card__plan-title Карточка компании «СТАНДАРТ»
+						p.promo-company-card__plan-desc Для компаний, которым важно поддерживать карточку в актуальном состоянии.
+						.promo-company-card__price
+							span.promo-company-card__price-value 58 000 ₽
+							span.promo-company-card__price-note / год
+						ul.promo-company-card__list
+							li.promo-company-card__item
+								+icon('check')
+								| Размещение в каталоге CNewsMarket
+							li.promo-company-card__item
+								+icon('check')
+								| Подписка на внесение изменений в течение 12 месяцев
+							li.promo-company-card__item
+								+icon('check')
+								| Стандартные блоки «О компании»
+						.promo-company-card__cta
+							a.btn.btn--ghost.btn--block(href='#lead') Отправить заявку
+
+					article.promo-company-card__plan.promo-company-card__plan--featured(data-reveal)
+						.promo-company-card__badge
+							span.chip.chip--brand Максимальный охват
+						p.promo-company-card__plan-name Премиум
+						h3.promo-company-card__plan-title Карточка компании «ПРЕМИУМ»
+						p.promo-company-card__plan-desc Для максимальной заметности в каталоге, ротации и рейтингах.
+						.promo-company-card__price
+							span.promo-company-card__price-value 160 000 ₽
+							span.promo-company-card__price-note / год
+						ul.promo-company-card__list
+							li.promo-company-card__item
+								+icon('check')
+								| Подписка на обновление карточки компании
+							li.promo-company-card__item
+								+icon('check')
+								| Анонсирование в ротации
+							li.promo-company-card__item
+								+icon('check')
+								| Размещение ссылок в рейтингах
+						.promo-company-card__cta
+							a.btn.btn--block(href='#lead')
+								| Отправить заявку
+								+icon('arrow-right', 'icon--arrow')
+
+		//- Стоимость
+		section.section.section--soft#pricing
+			.container
+				.section__head(data-reveal)
+					p.eyebrow 04 — Стоимость
+					h2.section__title Стоимость размещения
+					p.section__lead Прозрачные тарифы на дополнительные форматы: партнёрство раздела, спонсорство и брендирование услуги.
+
+				.promo-price__table-wrap(data-reveal)
+					table.promo-table
+						thead.promo-table__head
+							tr.promo-table__row
+								th.promo-table__cell Вид размещения
+								th.promo-table__cell.promo-table__cell--price Стоимость с НДС
+						tbody.promo-table__body
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Партнёр раздела
+									span.promo-table__note на 6 месяцев
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 435 000 ₽
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Титульный спонсор
+									span.promo-table__note на 6 месяцев
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 256 000 ₽
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Брендирование услуги на CNewsMarket
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 40 000 ₽/мес
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Брендирование услуги на CNewsMarket и на главной CNews
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 70 000 ₽/мес
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name ТОП-3 в поиске + Предложение месяца
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 20 000 ₽/мес
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Статья / новость
+									span.promo-table__note любая публикация
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 45 000 ₽
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Любая публикация с обычным анонсированием
+									span.promo-table__note Без гарантий по прочтениям
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 165 000 ₽
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Любая публикация с расширенным анонсированием
+									span.promo-table__note Гарантированный KPI 1600 прочтений
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 225 000 ₽
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Подсказки при выборе тарифов
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 65 000 ₽/мес
+							tr.promo-table__row
+								td.promo-table__cell(data-type='Вид размещения')
+									span.promo-table__name Публикация отзывов
+								td.promo-table__cell.promo-table__cell--price(data-price='Стоимость с НДС')
+									span.promo-table__price 88 000 ₽
+
+				p.promo-price__footnote(data-reveal)
+					+icon('info')
+					| Стоимость указана с НДС. Состав размещения, сроки и условия согласовываются индивидуально.
+
+		//- Как это работает
+		section.section#how
+			.container
+				.section__head(data-reveal)
+					p.eyebrow 05 — Процесс
+					h2.section__title Как это работает
+					p.section__lead Четыре шага от заявки до публикации на CNewsMarket.
+
+				.promo-steps__grid
+					.promo-steps__item(data-reveal)
+						span.promo-steps__num 01
+						h3.promo-steps__title Заявка
+						p.promo-steps__text Оставьте заявку — менеджер уточнит задачу и подберёт формат размещения.
+					.promo-steps__item(data-reveal)
+						span.promo-steps__num 02
+						h3.promo-steps__title Согласование
+						p.promo-steps__text Фиксируем состав размещения, сроки и стоимость.
+					.promo-steps__item(data-reveal)
+						span.promo-steps__num 03
+						h3.promo-steps__title Публикация
+						p.promo-steps__text Готовим материалы и размещаем их на CNewsMarket.
+					.promo-steps__item(data-reveal)
+						span.promo-steps__num 04
+						h3.promo-steps__title Сопровождение
+						p.promo-steps__text Помогаем обновлять карточку и продлевать размещение.
+
+		//- Заявка
+		section.promo-lead#lead
+			.promo-lead__bg
+				+pic('promo-cta', 'jpg', '', '', 1800, 630)
+			.container
+				.promo-lead__inner
+					div(data-reveal)
+						p.eyebrow.eyebrow--light Заявка на продвижение
+						h2.promo-lead__title Обсудим продвижение вашей компании
+						p.promo-lead__text Оставьте заявку — менеджер CNewsMarket свяжется с вами, подберёт формат и рассчитает стоимость.
+						ul.promo-lead__list
+							li
+								+icon('check')
+								| Подберём формат под задачу и бюджет
+							li
+								+icon('check')
+								| Зафиксируем сроки и стоимость до оплаты
+							li
+								+icon('check')
+								| Поможем с материалами для размещения
+						.promo-lead__cta
+							a.btn.btn--lg(href='#lead')
+								| Отправить заявку
+								+icon('arrow-right', 'icon--arrow')
+
+					//div.promo-lead__form-card(data-reveal)
+						h3.promo-lead__form-title Оставьте заявку
+						p.promo-lead__form-note Ответим в рабочее время, с понедельника по пятницу.
+
+						form.form.js-lead-form(novalidate)
+							.form__body
+								.form__row
+									.form__field
+										label.form__label(for='lead-name')
+											| Имя
+											span.form__label-req *
+										input#lead-name.form__input(type='text', name='name', placeholder='Как к вам обращаться', autocomplete='name', required)
+										span.form__error Введите имя
+									.form__field
+										label.form__label(for='lead-company') Компания
+										input#lead-company.form__input(type='text', name='company', placeholder='Название компании', autocomplete='organization')
+
+								.form__row
+									.form__field
+										label.form__label(for='lead-phone')
+											| Телефон
+											span.form__label-req *
+										input#lead-phone.form__input(type='tel', name='phone', placeholder='+7 (999) 000-00-00', autocomplete='tel', required)
+										span.form__error Укажите телефон для связи
+									.form__field
+										label.form__label(for='lead-email') E-mail
+										input#lead-email.form__input(type='email', name='email', placeholder='name@company.ru', autocomplete='email')
+										span.form__error Проверьте адрес электронной почты
+
+								.form__field
+									label.form__label(for='lead-comment') Комментарий
+									textarea#lead-comment.form__input(name='comment', rows='3', placeholder='Какой формат размещения интересует')
+
+								label.form__consent
+									input.form__checkbox(type='checkbox', name='consent', required)
+									span
+										| Согласен на обработку персональных данных в соответствии с
+										|
+										a(href='https://market.cnews.ru/', target='_blank', rel='noopener') политикой конфиденциальности
+
+								button.btn.btn--block(type='submit')
+									| Отправить заявку
+									+icon('arrow-right', 'icon--arrow')
+
+							.form__success
+								+icon('check')
+								p.form__success-title Заявка отправлена
+								p.form__success-text Менеджер CNewsMarket свяжется с вами в рабочее время.

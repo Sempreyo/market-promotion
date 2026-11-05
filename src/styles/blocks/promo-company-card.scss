@@ -1,0 +1,150 @@
+.promo-company-card {
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+
+		@include max(ti) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__plan {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: clamp(24px, 3vw, 40px);
+		background-color: #fff;
+		border: 1px solid var(--line);
+		border-radius: var(--radius-l);
+		transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+
+		@include hover-device {
+			&:hover {
+				border-color: var(--brand);
+				box-shadow: var(--shadow-m);
+			}
+		}
+
+		&--featured {
+			background-color: var(--dark);
+			border-color: var(--dark);
+			color: rgba(255, 255, 255, 0.7);
+			box-shadow: var(--shadow-l);
+		}
+	}
+
+	&__badge {
+		position: absolute;
+		top: 24px;
+		right: 24px;
+
+		@include max(t) {
+			position: static;
+			align-self: flex-start;
+			margin-bottom: 14px;
+		}
+	}
+
+	&__plan-name {
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--brand-text);
+		margin-bottom: 14px;
+	}
+
+	&__plan-title {
+		font-size: var(--fs-h3);
+		font-weight: 700;
+		color: var(--ink);
+		line-height: 1.25;
+		margin-bottom: 10px;
+		max-width: 24ch;
+
+		.promo-company-card__plan--featured & {
+			color: #fff;
+		}
+	}
+
+	&__plan-desc {
+		font-size: 14px;
+		line-height: 1.55;
+		color: var(--muted);
+		margin-bottom: 22px;
+		max-width: 36ch;
+		min-height: 66px;
+
+		.promo-company-card__plan--featured & {
+			color: rgba(255, 255, 255, 0.62);
+		}
+	}
+
+	&__price {
+		display: flex;
+		align-items: baseline;
+		gap: 8px;
+		padding-bottom: 24px;
+		margin-bottom: 24px;
+		border-bottom: 1px solid var(--line);
+
+		.promo-company-card__plan--featured & {
+			border-color: rgba(255, 255, 255, 0.12);
+		}
+	}
+
+	&__price-value {
+		font-size: clamp(28px, 3vw, 36px);
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: -0.02em;
+		color: var(--ink);
+
+		.promo-company-card__plan--featured & {
+			color: #fff;
+		}
+	}
+
+	&__price-note {
+		font-size: 14px;
+		color: var(--muted);
+
+		.promo-company-card__plan--featured & {
+			color: rgba(255, 255, 255, 0.55);
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		flex-grow: 1;
+		margin-bottom: 28px;
+	}
+
+	&__item {
+		display: flex;
+		gap: 10px;
+		font-size: 15px;
+		line-height: 1.5;
+		color: var(--text);
+
+		.icon {
+			width: 18px;
+			height: 18px;
+			margin-top: 2px;
+			color: var(--brand);
+		}
+
+		.promo-company-card__plan--featured & {
+			color: rgba(255, 255, 255, 0.82);
+		}
+	}
+
+	&__cta {
+		.btn {
+			width: 100%;
+		}
+	}
+}

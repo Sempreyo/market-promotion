@@ -1,0 +1,56 @@
+/* Адаптив */
+@function _get-media-width($width, $maxmin) {
+	@if map-get($media-list, $width) {
+		$width: map-get($media-list, $width);
+
+		@if $maxmin {
+			@return $width;
+		} @else {
+			@return $width + 1;
+		}
+	} @else {
+		@return $width;
+	}
+}
+
+@mixin max($width) {
+	$width: _get-media-width($width, true);
+	@media only screen and (max-width: $width + 'px') {
+		@content;
+	}
+}
+
+@mixin min($width) {
+	$width: _get-media-width($width, false);
+	@media only screen and (min-width: $width + 'px') {
+		@content;
+	}
+}
+
+//- Fluid
+//- Пример: font-size: fluid(16, 20, 992, 1440)
+@function fluid($min, $max, $wMin, $wMax) {
+	$result: calc(#{$min}px + ( #{$max} - #{$min} ) * ( (100vw - #{$wMin}px) / ( #{$wMax} - #{$wMin}) ));
+
+	@return $result;
+}
+
+@function vw($px) {
+	@return calc(($px/1920) * 100)+vw;
+}
+
+/* Хелперы */
+@mixin hover-device {
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+@mixin line-clamp($lines) {
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
